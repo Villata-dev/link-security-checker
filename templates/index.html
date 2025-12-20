@@ -1,25 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThreatIntel Link Scanner</title>
+    <title>Link Security Checker</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>ThreatIntel Link Scanner</h1>
+
+    <div class="background-glow"></div>
+
+    <div class="container glass-effect">
+        <header>
+            <div class="icon-container">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3 7V13C3 18.25 6.85 23.1 12 24C17.15 23.1 21 18.25 21 13V7L12 2Z" fill="#007bff" fill-opacity="0.2" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8L12 16" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 16V16.01" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1>Link Security Checker</h1>
+            <p class="subtitle">Analiza URLs en tiempo real para detectar amenazas</p>
+        </header>
+
         <div class="input-container">
-            <input type="url" id="url-input" placeholder="https://example.com">
-            <button id="scan-button">Escanear Enlace</button>
+            <input type="url" id="url-input" placeholder="Pega el enlace aquí (ej: https://sitio.com)..." autocomplete="off">
+            <button id="scan-button">
+                <span>Escanear</span>
+            </button>
         </div>
+
         <div id="results-container" class="hidden">
             <div id="result-card" class="card">
-                <p id="result-message"></p>
+                <div class="card-icon" id="card-icon"></div>
+                <div class="card-content">
+                    <h3>Resultado del Análisis</h3>
+                    <p id="result-message"></p>
+                </div>
             </div>
         </div>
+
         <div id="loading-spinner" class="hidden"></div>
+
+        <footer>
+            <p>Link Security Checker © 2025 | Powered by Python & Flask</p>
+        </footer>
     </div>
+
     <script src="/static/js/main.js"></script>
 </body>
 </html>
