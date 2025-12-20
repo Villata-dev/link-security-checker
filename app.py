@@ -1,6 +1,6 @@
 import os
 import base64
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 import requests
 
@@ -11,6 +11,14 @@ app = Flask(__name__)
 
 # Get VirusTotal API key from environment variables
 VT_API_KEY = os.getenv("VT_API_KEY")
+
+@app.route('/')
+def index():
+    """
+    Serves the main HTML page.
+    """
+    return render_template('index.html')
+
 
 @app.route('/api/scan', methods=['POST'])
 def scan_url():

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreatIntel Link Scanner</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ThreatIntel Link Scanner</h1>
+        <div class="input-container">
+            <input type="url" id="url-input" placeholder="https://example.com">
+            <button id="scan-button">Escanear Enlace</button>
+        </div>
+        <div id="results-container" class="hidden">
+            <div id="result-card" class="card">
+                <p id="result-message"></p>
+            </div>
+        </div>
+        <div id="loading-spinner" class="hidden"></div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
