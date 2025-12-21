@@ -45,20 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResults(data) {
         resultCard.className = 'card'; // Reset classes
+        resultMessage.textContent = data.message; // Use message directly from backend
+
         switch (data.status) {
             case 'SAFE':
                 resultCard.classList.add('safe');
-                resultMessage.textContent = `This link appears to be safe. Malicious detections: ${data.malicious_count}`;
                 break;
             case 'DANGER':
                 resultCard.classList.add('danger');
-                resultMessage.textContent = `This link is potentially dangerous! Malicious detections: ${data.malicious_count}`;
                 break;
             case 'WARNING':
                 resultCard.classList.add('warning');
-                resultMessage.textContent = `Use caution with this link. Malicious detections: ${data.malicious_count}`;
+                break;
+            case 'UNKNOWN':
+                resultCard.classList.add('unknown'); // Style for unknown status
                 break;
             default:
+                // Fallback for any unexpected status
                 resultMessage.textContent = 'Could not determine the status of the link.';
         }
         resultsContainer.classList.remove('hidden');
